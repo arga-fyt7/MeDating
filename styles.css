@@ -58,7 +58,6 @@ body,
   position: sticky;
   top: 0;
   z-index: 100;
-  border-radius: 0 0 20px 20px;
 }
 
 body.dark .header {
@@ -66,6 +65,20 @@ body.dark .header {
   border-color: var(--color-border);
 }
 
+/* Title / Logo */
+.header-title {
+  font-size: 20px;
+  font-weight: 700;
+  user-select: none;
+  color: var(--color-text);
+  margin: 0;
+}
+
+body.dark .header-title {
+  color: var(--color-text);
+}
+
+/* Menu */
 .header-menu {
   display: flex;
   gap: 12px;
@@ -90,18 +103,7 @@ body.dark .header {
   color: #fff;
 }
 
-.header-title {
-  font-size: 20px;
-  font-weight: 700;
-  user-select: none;
-  color: var(--color-text);
-}
-
-body.dark .header-title {
-  color: var(--color-text);
-}
-
-/* Toggle button style */
+/* Toggle button */
 .header-toggle button {
   background: transparent;
   border: 2px solid currentColor;
@@ -112,7 +114,6 @@ body.dark .header-title {
   color: inherit;
   transition: background-color 0.3s ease, color 0.3s ease;
   user-select: none;
-  justify-self: end;
 }
 
 .header-toggle button:hover,
@@ -153,92 +154,113 @@ body.dark .header-title {
 =========================== */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr); /* default: 3 kolom (HP sesuai permintaan) */
+  gap: 16px;
+  align-items: start;
 }
 
+/* Desktop: 4 kolom */
+@media (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Card */
 .card {
   background: var(--color-primary);
   border: 1px solid var(--color-border);
-  border-radius: 16px;
-  padding: 20px;
+  border-radius: 8px;
   text-align: center;
+  -webkit-backdrop-filter: blur(var(--blur-strength));
   backdrop-filter: blur(var(--blur-strength));
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
   overflow: hidden;
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
+  width: 100%; 
+  padding: 0px;
+  box-shadow: none;
 }
 
-.card ion-icon {
-  font-size: 38px;
-  margin-bottom: 12px;
-  color: var(--color-accent);
-}
-
-.card h3 {
-  font-size: 17px;
-  margin-bottom: 6px;
-}
-
-.card p {
-  font-size: 14px;
-  opacity: 0.85;
-}
-
+/* Hover */
 .card:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
 }
 
-/* Profile Card Specific Styles */
+/* Icon di card (ion-icon atau <i>) */
+.card ion-icon,
+.card .icon {
+  display: block;
+  font-size: 38px;
+  margin-bottom: 12px;
+  color: var(--color-accent);
+}
+
+/* Judul & teks */
+.card h3 {
+  font-size: 17px;
+  margin: 0 0 6px;
+}
+
+.card p {
+  font-size: 14px;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* ===========================
+   Profile Card Modern Style
+=========================== */
 .profile-card {
-  padding: 0;
-  text-align: left;
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
-  position: relative;
-  cursor: pointer;
+  background: var(--color-primary);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
 
 .profile-card img {
   width: 100%;
-  height: 140px;
-  display: block;
+  aspect-ratio: 3/4;       /* proporsional */
   object-fit: cover;
+  display: block;
 }
 
+/* Overlay info di bawah foto */
 .profile-info {
-  padding: 12px 16px;
-  background: var(--color-primary);
+  padding: 12px;
+  text-align: left;
 }
 
-.profile-info h3 {
+.profile-info .distance {
+  display: block;
+  font-size: 13px;
+  color: #666;
   margin: 0 0 4px 0;
+}
+
+.profile-info .name {
+  display: block;
   font-size: 18px;
-}
-
-.profile-info p {
+  font-weight: 600;
   margin: 0;
-  font-size: 14px;
-  color: var(--color-text);
-  opacity: 0.8;
 }
 
-/* Online Dot */
+/* Online indicator */
 .online-dot {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 14px;
-  height: 14px;
-  background-color: #4caf50; /* green dot */
+  top: 8px;
+  right: 8px;
+  width: 12px;
+  height: 12px;
+  background-color: #4caf50;
   border: 2px solid white;
   border-radius: 50%;
   box-shadow: 0 0 6px #4caf50;
 }
+
 
 /* ===========================
    Animations
@@ -327,96 +349,4 @@ body.dark .nav-item::after {
 .nav-item:hover::after {
   opacity: 1;
   transform: translateX(-50%) scale(1);
-}
-
-/* ===========================
-   Responsive Design
-=========================== */
-
-/* Tablet and small desktops */
-@media (max-width: 768px) {
-  /* Header stacked vertically */
-  .header {
-    flex-direction: column;
-    gap: 12px;
-    padding: 12px;
-  }
-
-  .header-title {
-    order: 1;
-    text-align: center;
-  }
-
-  .header-menu {
-    order: 2;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .header-toggle {
-    order: 3;
-    justify-content: center;
-  }
-
-  /* Card grid: 3 columns */
-  .card-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-  }
-
-  /* Bottom nav wider and padding adjusted */
-  .bottom-nav {
-    width: 95%;
-    padding: 10px;
-  }
-}
-
-/* Small mobile devices */
-@media (max-width: 480px) {
-  .header-menu {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .header-menu-item {
-    flex: 1 1 45%;
-    margin: 4px;
-    font-size: 14px;
-    padding: 8px 10px;
-  }
-
-  .header-title {
-    font-size: 18px;
-  }
-
-  .profile-info h3 {
-    font-size: 16px;
-  }
-
-  .profile-info p {
-    font-size: 12px;
-  }
-
-  .card {
-    padding: 12px;
-  }
-
-  .bottom-nav {
-    width: 100%;
-    padding: 8px;
-    bottom: 10px;
-  }
-
-  .nav-item {
-    font-size: 20px;
-    padding: 6px 0;
-  }
-}
-
-/* Very small mobile devices */
-@media (max-width: 360px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
