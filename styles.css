@@ -383,7 +383,7 @@ body.dark .header {
   text-align: left;
 }
 
-.profile-info .distance {
+.profile-info .distance .status {
   display: block;
   font-size: 13px;
   color: #666;
