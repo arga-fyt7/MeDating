@@ -15,20 +15,28 @@
     <main>
         <!-- Header -->
         <header class="header" role="banner">
-            <!-- Menu -->
             <nav class="header-menu" role="menubar">
-                <button class="header-menu-item active" role="menuitem" aria-current="page" tabindex="0">
+                <button class="header-menu-item active" role="menuitem" aria-current="page" tabindex="0"
+                    data-menu="nearby">
                     Nearby
                 </button>
-                <button class="header-menu-item" role="menuitem" tabindex="0">
+                <button class="header-menu-item" role="menuitem" tabindex="0" data-menu="online">
                     Online
                 </button>
             </nav>
-            <!-- Title -->
             <h2 class="header-title">MeDating</h2>
-            <!-- Toggle -->
             <nav class="header-toggle">
-                <button class="toggle-theme" aria-label="Toggle light and dark mode">
+                <button class="toggle-btn" aria-label="Search">
+                    <ion-icon name="search-outline"></ion-icon>
+                </button>
+                <div class="profile-slot">
+                    <button class="toggle-btn booster" aria-label="Profile Booster">
+                        <ion-icon name="flash-outline"></ion-icon>
+                    </button>
+                    <img src="https://ui-avatars.com/api/?name=Sara&background=random&size=200" alt="Sara"
+                        class="profile-img hidden">
+                </div>
+                <button class="toggle-btn toggle-theme" aria-label="Toggle light and dark mode">
                     <ion-icon name="moon"></ion-icon>
                 </button>
             </nav>
@@ -53,40 +61,40 @@
                     <div class="card profile-card" data-role="profile" data-age="25" data-location="Bandung">
                         <img src="https://ui-avatars.com/api/?name=Sara&background=random&size=200" alt="Sara">
                         <div class="profile-info">
-                            <p>5 km</p>
-                            <h3>Sara</h3>
+                            <span class="distance">5 km</span>
+                            <span class="name">Sara</span>
                         </div>
                         <div class="online-dot"></div>
                     </div>
                     <div class="card profile-card" data-role="profile" data-age="28" data-location="Surabaya">
                         <img src="https://ui-avatars.com/api/?name=Mike&background=random&size=200" alt="Mike">
                         <div class="profile-info">
-                            <p>10 km</p>
-                            <h3>Mike</h3>
+                            <span class="distance">10 km</span>
+                            <span class="name">Mike</span>
                         </div>
                         <div class="online-dot"></div>
                     </div>
                     <div class="card profile-card" data-role="profile" data-age="21" data-location="Yogyakarta">
                         <img src="https://ui-avatars.com/api/?name=Rina&background=random&size=200" alt="Rina">
                         <div class="profile-info">
-                            <p>8 km</p>
-                            <h3>Rina</h3>
+                            <span class="distance">8 km</span>
+                            <span class="name">Rina</span>
                         </div>
                         <div class="online-dot"></div>
                     </div>
                     <div class="card profile-card" data-role="profile" data-age="26" data-location="Medan">
                         <img src="https://ui-avatars.com/api/?name=David&background=random&size=200" alt="David">
                         <div class="profile-info">
-                            <p>15 km</p>
-                            <h3>David</h3>
+                            <span class="distance">15 km</span>
+                            <span class="name">David</span>
                         </div>
                         <div class="online-dot"></div>
                     </div>
                     <div class="card profile-card" data-role="profile" data-age="24" data-location="Semarang">
                         <img src="https://ui-avatars.com/api/?name=Luna&background=random&size=200" alt="Luna">
                         <div class="profile-info">
-                            <p>12 km</p>
-                            <h3>Luna</h3>
+                            <span class="distance">12 km</span>
+                            <span class="name">Luna</span>
                         </div>
                         <div class="online-dot"></div>
                     </div>
@@ -102,48 +110,48 @@
                     <div class="card profile-card" data-role="profile" data-age="24" data-location="Online">
                         <img src="https://ui-avatars.com/api/?name=Lisa&background=random&size=200" alt="Lisa">
                         <div class="profile-info">
-                            <h3>Lisa</h3>
-                            <p>Online</p>
+                            <span class="distance">Online</span>
+                            <span class="name">Lisa</span>
                         </div>
                         <div class="online-dot"></div>
                     </div>
                     <div class="card profile-card" data-role="profile" data-age="26" data-location="Online">
                         <img src="https://ui-avatars.com/api/?name=John&background=random&size=200" alt="John">
                         <div class="profile-info">
-                            <h3>John</h3>
-                            <p>Online</p>
+                            <span class="distance">Online</span>
+                            <span class="name">John</span>
                         </div>
                         <div class="online-dot"></div>
                     </div>
                     <div class="card profile-card" data-role="profile" data-age="30" data-location="Online">
                         <img src="https://ui-avatars.com/api/?name=Emma&background=random&size=200" alt="Emma">
                         <div class="profile-info">
-                            <h3>Emma</h3>
-                            <p>Online</p>
+                            <span class="distance">Online</span>
+                            <span class="name">Emma</span>
                         </div>
                         <div class="online-dot"></div>
                     </div>
                     <div class="card profile-card" data-role="profile" data-age="27" data-location="Online">
                         <img src="https://ui-avatars.com/api/?name=Tom&background=random&size=200" alt="Tom">
                         <div class="profile-info">
-                            <h3>Tom</h3>
-                            <p>Online</p>
+                            <span class="distance">Online</span>
+                            <span class="name">Tom</span>
                         </div>
                         <div class="online-dot"></div>
                     </div>
                     <div class="card profile-card" data-role="profile" data-age="23" data-location="Online">
                         <img src="https://ui-avatars.com/api/?name=Amy&background=random&size=200" alt="Amy">
                         <div class="profile-info">
-                            <h3>Amy</h3>
-                            <p>Online</p>
+                            <span class="distance">Online</span>
+                            <span class="name">Amy</span>
                         </div>
                         <div class="online-dot"></div>
                     </div>
                     <div class="card profile-card" data-role="profile" data-age="29" data-location="Online">
                         <img src="https://ui-avatars.com/api/?name=Ben&background=random&size=200" alt="Ben">
                         <div class="profile-info">
-                            <h3>Ben</h3>
-                            <p>Online</p>
+                            <span class="distance">Online</span>
+                            <span class="name">Ben</span>
                         </div>
                         <div class="online-dot"></div>
                     </div>
@@ -174,6 +182,23 @@
                 <ion-icon name="settings-outline"></ion-icon>
             </div>
         </nav>
+        <!-- Search Modal -->
+        <div class="search-modal hidden" id="searchModal">
+            <div class="search-content">
+                <div class="search-header">
+                    <input type="text" id="searchInput" placeholder="Cari sesuatu..." autocomplete="off">
+                    <button class="close-btn" aria-label="Close Search">
+                        <ion-icon name="close"></ion-icon>
+                    </button>
+                </div>
+
+                <!-- Hasil Pencarian -->
+                <ul class="search-results" id="searchResults">
+                    <!-- hasil muncul otomatis -->
+                </ul>
+            </div>
+        </div>
+
     </main>
 
     <script src="main.js"></script>
