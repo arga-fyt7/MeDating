@@ -15,25 +15,24 @@
     <main>
         <!-- Header -->
         <header class="header" role="banner">
+            <!-- Menu -->
             <nav class="header-menu" role="menubar">
-                <button class="header-menu-item active" role="menuitem" data-menu="Nearby" data-tooltip="Nearby"
-                    aria-current="page" tabindex="0">
+                <button class="header-menu-item active" role="menuitem" aria-current="page" tabindex="0">
                     Nearby
                 </button>
-                <button class="header-menu-item" role="menuitem" data-menu="Online" data-tooltip="Online"
-                    aria-label="Online" tabindex="0">
+                <button class="header-menu-item" role="menuitem" tabindex="0">
                     Online
                 </button>
             </nav>
-
+            <!-- Title -->
             <h2 class="header-title">MeDating</h2>
-
+            <!-- Toggle -->
             <nav class="header-toggle">
-                <button class="toggle-theme" aria-label="Toggle light and dark mode"><ion-icon
-                        name="moon"></ion-icon></button>
+                <button class="toggle-theme" aria-label="Toggle light and dark mode">
+                    <ion-icon name="moon"></ion-icon>
+                </button>
             </nav>
         </header>
-
 
         <div class="content">
             <!-- Nearby Section -->
@@ -45,11 +44,12 @@
                     <div class="card profile-card" data-role="profile" data-age="22" data-location="Jakarta">
                         <img src="https://ui-avatars.com/api/?name=Alex&background=random&size=200" alt="Alex">
                         <div class="profile-info">
-                            <p>2 km</p>
-                            <h3>Alex</h3>
+                            <span class="distance">2 km</span>
+                            <span class="name">Alex</span>
                         </div>
                         <div class="online-dot"></div>
                     </div>
+
                     <div class="card profile-card" data-role="profile" data-age="25" data-location="Bandung">
                         <img src="https://ui-avatars.com/api/?name=Sara&background=random&size=200" alt="Sara">
                         <div class="profile-info">
