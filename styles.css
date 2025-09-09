@@ -74,11 +74,7 @@ body.dark .header {
   margin: 0;
 }
 
-body.dark .header-title {
-  color: var(--color-text);
-}
-
-/* Menu */
+/* Menu tengah */
 .header-menu {
   display: flex;
   gap: 12px;
@@ -103,24 +99,175 @@ body.dark .header-title {
   color: #fff;
 }
 
-/* Toggle button */
-.header-toggle button {
-  background: transparent;
-  border: 2px solid currentColor;
-  border-radius: 20px;
-  padding: 6px 14px;
-  font-weight: 600;
-  cursor: pointer;
-  color: inherit;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  user-select: none;
+/* Toggle kanan */
+.header-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.header-toggle button:hover,
-.header-toggle button:focus {
+.toggle-btn {
+  background: transparent;
+  border: 2px solid currentColor;
+  border-radius: 12px;
+  padding: 6px 10px;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggle-btn:hover,
+.toggle-btn:focus {
   background: var(--color-accent);
   color: #fff;
   outline: none;
+}
+
+/* Slot fleksibel */
+.profile-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Profile circle */
+.profile-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-accent);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+/* Class helper */
+.hidden {
+  display: none !important;
+}
+
+/* Modal wrapper */
+.search-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 80px; /* turun sedikit dari header */
+  z-index: 2000;
+}
+
+.search-modal.hidden {
+  display: none;
+}
+
+/* Box search */
+.search-content {
+  background: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+/* Header modal */
+.search-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.search-header input {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  outline: none;
+}
+
+.search-header input:focus {
+  border-color: var(--color-accent);
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+/* Results list */
+.search-results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Item */
+.search-results li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-results li:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* Foto profil */
+.search-results img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Info */
+.search-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-info .name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.search-info .desc {
+  font-size: 13px;
+  color: #666;
+}
+
+.search-results li:hover .desc {
+  color: #f0f0f0; /* biar jelas saat hover */
+}
+
+/* Empty state */
+.search-empty {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #888;
 }
 
 /* ===========================
@@ -154,7 +301,8 @@ body.dark .header-title {
 =========================== */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* default: 3 kolom (HP sesuai permintaan) */
+  grid-template-columns: repeat(3, 1fr);
+  /* default: 3 kolom (HP sesuai permintaan) */
   gap: 16px;
   align-items: start;
 }
@@ -178,7 +326,7 @@ body.dark .header-title {
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
   overflow: hidden;
-  width: 100%; 
+  width: 100%;
   padding: 0px;
   box-shadow: none;
 }
@@ -218,12 +366,13 @@ body.dark .header-title {
   overflow: hidden;
   background: var(--color-primary);
   border: 1px solid var(--color-border);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
 .profile-card img {
   width: 100%;
-  aspect-ratio: 3/4;       /* proporsional */
+  aspect-ratio: 3/4;
+  /* proporsional */
   object-fit: cover;
   display: block;
 }
@@ -247,8 +396,7 @@ body.dark .header-title {
   font-weight: 600;
   margin: 0;
 }
-
-/* Online indicator */
+/* Online dot */
 .online-dot {
   position: absolute;
   top: 8px;
@@ -261,6 +409,28 @@ body.dark .header-title {
   box-shadow: 0 0 6px #4caf50;
 }
 
+/* Status badge (gantikan dot) */
+.status-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.status-badge.live {
+  background: #e53935;
+  box-shadow: 0 0 8px rgba(229,57,53,0.6);
+}
+
+.status-badge.voice {
+  background: #1e88e5;
+  box-shadow: 0 0 8px rgba(30,136,229,0.6);
+}
 
 /* ===========================
    Animations
@@ -270,6 +440,7 @@ body.dark .header-title {
     opacity: 0;
     transform: translateY(15px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
