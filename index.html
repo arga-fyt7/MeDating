@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home - MeDating: Dating App</title>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main>
+        <!-- Header -->
+        <header class="header" role="banner">
+            <nav class="header-menu" role="menubar">
+                <button class="header-menu-item active" role="menuitem" data-menu="Nearby" data-tooltip="Nearby"
+                    aria-current="page" tabindex="0">
+                    Nearby
+                </button>
+                <button class="header-menu-item" role="menuitem" data-menu="Online" data-tooltip="Online"
+                    aria-label="Online" tabindex="0">
+                    Online
+                </button>
+            </nav>
+
+            <h2 class="header-title">MeDating</h2>
+
+            <nav class="header-toggle">
+                <button class="toggle-theme" aria-label="Toggle light and dark mode"><ion-icon
+                        name="moon"></ion-icon></button>
+            </nav>
+        </header>
+
+
+        <div class="content">
+            <!-- Nearby Section -->
+            <section id="nearby" class="content-section active">
+                <h2>Nearby</h2>
+                <p>Temukan orang, acara, atau tempat menarik di sekitar kamu.</p>
+                <div class="card-grid">
+                    <!-- Profile Cards -->
+                    <div class="card profile-card" data-role="profile" data-age="22" data-location="Jakarta">
+                        <img src="https://ui-avatars.com/api/?name=Alex&background=random&size=200" alt="Alex">
+                        <div class="profile-info">
+                            <p>2 km</p>
+                            <h3>Alex</h3>
+                        </div>
+                        <div class="online-dot"></div>
+                    </div>
+                    <div class="card profile-card" data-role="profile" data-age="25" data-location="Bandung">
+                        <img src="https://ui-avatars.com/api/?name=Sara&background=random&size=200" alt="Sara">
+                        <div class="profile-info">
+                            <p>5 km</p>
+                            <h3>Sara</h3>
+                        </div>
+                        <div class="online-dot"></div>
+                    </div>
+                    <div class="card profile-card" data-role="profile" data-age="28" data-location="Surabaya">
+                        <img src="https://ui-avatars.com/api/?name=Mike&background=random&size=200" alt="Mike">
+                        <div class="profile-info">
+                            <p>10 km</p>
+                            <h3>Mike</h3>
+                        </div>
+                        <div class="online-dot"></div>
+                    </div>
+                    <div class="card profile-card" data-role="profile" data-age="21" data-location="Yogyakarta">
+                        <img src="https://ui-avatars.com/api/?name=Rina&background=random&size=200" alt="Rina">
+                        <div class="profile-info">
+                            <p>8 km</p>
+                            <h3>Rina</h3>
+                        </div>
+                        <div class="online-dot"></div>
+                    </div>
+                    <div class="card profile-card" data-role="profile" data-age="26" data-location="Medan">
+                        <img src="https://ui-avatars.com/api/?name=David&background=random&size=200" alt="David">
+                        <div class="profile-info">
+                            <p>15 km</p>
+                            <h3>David</h3>
+                        </div>
+                        <div class="online-dot"></div>
+                    </div>
+                    <div class="card profile-card" data-role="profile" data-age="24" data-location="Semarang">
+                        <img src="https://ui-avatars.com/api/?name=Luna&background=random&size=200" alt="Luna">
+                        <div class="profile-info">
+                            <p>12 km</p>
+                            <h3>Luna</h3>
+                        </div>
+                        <div class="online-dot"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Online Section -->
+            <section id="online" class="content-section">
+                <h2>Online</h2>
+                <p>Berinteraksi dengan komunitas global secara real-time.</p>
+                <div class="card-grid">
+                    <!-- Profile Cards -->
+                    <div class="card profile-card" data-role="profile" data-age="24" data-location="Online">
+                        <img src="https://ui-avatars.com/api/?name=Lisa&background=random&size=200" alt="Lisa">
+                        <div class="profile-info">
+                            <h3>Lisa</h3>
+                            <p>Online</p>
+                        </div>
+                        <div class="online-dot"></div>
+                    </div>
+                    <div class="card profile-card" data-role="profile" data-age="26" data-location="Online">
+                        <img src="https://ui-avatars.com/api/?name=John&background=random&size=200" alt="John">
+                        <div class="profile-info">
+                            <h3>John</h3>
+                            <p>Online</p>
+                        </div>
+                        <div class="online-dot"></div>
+                    </div>
+                    <div class="card profile-card" data-role="profile" data-age="30" data-location="Online">
+                        <img src="https://ui-avatars.com/api/?name=Emma&background=random&size=200" alt="Emma">
+                        <div class="profile-info">
+                            <h3>Emma</h3>
+                            <p>Online</p>
+                        </div>
+                        <div class="online-dot"></div>
+                    </div>
+                    <div class="card profile-card" data-role="profile" data-age="27" data-location="Online">
+                        <img src="https://ui-avatars.com/api/?name=Tom&background=random&size=200" alt="Tom">
+                        <div class="profile-info">
+                            <h3>Tom</h3>
+                            <p>Online</p>
+                        </div>
+                        <div class="online-dot"></div>
+                    </div>
+                    <div class="card profile-card" data-role="profile" data-age="23" data-location="Online">
+                        <img src="https://ui-avatars.com/api/?name=Amy&background=random&size=200" alt="Amy">
+                        <div class="profile-info">
+                            <h3>Amy</h3>
+                            <p>Online</p>
+                        </div>
+                        <div class="online-dot"></div>
+                    </div>
+                    <div class="card profile-card" data-role="profile" data-age="29" data-location="Online">
+                        <img src="https://ui-avatars.com/api/?name=Ben&background=random&size=200" alt="Ben">
+                        <div class="profile-info">
+                            <h3>Ben</h3>
+                            <p>Online</p>
+                        </div>
+                        <div class="online-dot"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav" id="bottomNav" role="navigation" aria-label="Bottom Navigation">
+            <div class="nav-item active" data-menu="home" data-tooltip="Home" role="button" tabindex="0"
+                aria-current="page" aria-label="Home">
+                <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <div class="nav-item" data-menu="explorer" data-tooltip="Explorer" role="button" tabindex="0"
+                aria-label="Explorer">
+                <ion-icon name="globe-outline"></ion-icon>
+            </div>
+            <div class="nav-item" data-menu="message" data-tooltip="Message" role="button" tabindex="0"
+                aria-label="Message">
+                <ion-icon name="chatbubble-outline"></ion-icon>
+            </div>
+            <div class="nav-item" data-menu="livestream" data-tooltip="Live Streaming" role="button" tabindex="0"
+                aria-label="Live Streaming">
+                <ion-icon name="videocam-outline"></ion-icon>
+            </div>
+            <div class="nav-item" data-menu="settings" data-tooltip="Settings" role="button" tabindex="0"
+                aria-label="Settings">
+                <ion-icon name="settings-outline"></ion-icon>
+            </div>
+        </nav>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

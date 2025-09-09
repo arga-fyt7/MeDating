@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* ===========================
+   Root & Global Styles
+=========================== */
+:root {
+  --color-bg: #f8f9fb;
+  --color-text: #222;
+  --color-primary: rgba(255, 255, 255, 0.6);
+  --color-border: rgba(255, 255, 255, 0.25);
+  --color-accent: #4e8cff;
+  --blur-strength: 16px;
+}
+
+body.dark {
+  --color-bg: #0f141a;
+  --color-text: #f0f0f0;
+  --color-primary: rgba(0, 0, 0, 0.35);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-accent: #ffb84e;
+  --bg-dark: #0f141a;
+  --bg-light: #f0f0f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s, color 0.3s;
+}
+
+body,
+.card,
+.bottom-nav {
+  transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+/* ===========================
+   Header
+=========================== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  backdrop-filter: blur(var(--blur-strength));
+  background: var(--color-primary);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-radius: 0 0 20px 20px;
+}
+
+body.dark .header {
+  background: var(--color-primary);
+  border-color: var(--color-border);
+}
+
+.header-menu {
+  display: flex;
+  gap: 12px;
+}
+
+.header-menu-item {
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  padding: 6px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.header-menu-item:hover,
+.header-menu-item.active {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: 700;
+  user-select: none;
+  color: var(--color-text);
+}
+
+body.dark .header-title {
+  color: var(--color-text);
+}
+
+/* Toggle button style */
+.header-toggle button {
+  background: transparent;
+  border: 2px solid currentColor;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: inherit;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+  justify-self: end;
+}
+
+.header-toggle button:hover,
+.header-toggle button:focus {
+  background: var(--color-accent);
+  color: #fff;
+  outline: none;
+}
+
+/* ===========================
+   Content Sections
+=========================== */
+.content-section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.content-section.active {
+  display: block;
+}
+
+.content-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.content-section p {
+  font-size: 15px;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+/* ===========================
+   Card Grid & Cards
+=========================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(var(--blur-strength));
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.card ion-icon {
+  font-size: 38px;
+  margin-bottom: 12px;
+  color: var(--color-accent);
+}
+
+.card h3 {
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+
+.card p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Profile Card Specific Styles */
+.profile-card {
+  padding: 0;
+  text-align: left;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-card img {
+  width: 100%;
+  height: 140px;
+  display: block;
+  object-fit: cover;
+}
+
+.profile-info {
+  padding: 12px 16px;
+  background: var(--color-primary);
+}
+
+.profile-info h3 {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+}
+
+.profile-info p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+/* Online Dot */
+.online-dot {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 14px;
+  height: 14px;
+  background-color: #4caf50; /* green dot */
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #4caf50;
+}
+
+/* ===========================
+   Animations
+=========================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+   Bottom Navigation
+=========================== */
+.bottom-nav {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: env(safe-area-inset-bottom, 12px);
+  width: 90%;
+  max-width: 420px;
+  padding: 12px;
+  background: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  backdrop-filter: blur(var(--blur-strength));
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, border 0.3s ease;
+}
+
+.nav-item {
+  flex: 1;
+  text-align: center;
+  color: var(--color-text);
+  font-size: 24px;
+  padding: 8px 0;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav-item:hover {
+  transform: translateY(-4px);
+}
+
+.nav-item.active {
+  color: var(--color-accent);
+}
+
+.nav-item ion-icon {
+  pointer-events: none;
+}
+
+/* Tooltip kecil */
+.nav-item::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 44px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  background: #222;
+  color: #fff;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+body.dark .nav-item::after {
+  background: #fff;
+  color: #000;
+}
+
+.nav-item:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+
+/* Tablet and small desktops */
+@media (max-width: 768px) {
+  /* Header stacked vertically */
+  .header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .header-title {
+    order: 1;
+    text-align: center;
+  }
+
+  .header-menu {
+    order: 2;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .header-toggle {
+    order: 3;
+    justify-content: center;
+  }
+
+  /* Card grid: 3 columns */
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  /* Bottom nav wider and padding adjusted */
+  .bottom-nav {
+    width: 95%;
+    padding: 10px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .header-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header-menu-item {
+    flex: 1 1 45%;
+    margin: 4px;
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .header-title {
+    font-size: 18px;
+  }
+
+  .profile-info h3 {
+    font-size: 16px;
+  }
+
+  .profile-info p {
+    font-size: 12px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .bottom-nav {
+    width: 100%;
+    padding: 8px;
+    bottom: 10px;
+  }
+
+  .nav-item {
+    font-size: 20px;
+    padding: 6px 0;
+  }
+}
+
+/* Very small mobile devices */
+@media (max-width: 360px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
